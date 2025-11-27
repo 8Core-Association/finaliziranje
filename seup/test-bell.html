@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Notification Bell</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/notification-bell.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        .test-container {
+            text-align: center;
+            padding: 40px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🔔 Test Notification Bell</h1>
+        <p>Pogledaj gornji desni ugao ekrana!</p>
+        <p>Trebalo bi biti žuto, kričavo zvono sa brojem 3.</p>
+    </div>
+
+    <!-- Notification Bell -->
+    <div class="seup-notification-bell has-notifications" id="seupNotificationBell">
+        <div class="bell-icon-wrapper">
+            <i class="fas fa-bell bell-icon"></i>
+            <span class="notification-badge" id="notificationCount" data-count="3">3</span>
+        </div>
+    </div>
+
+    <script src="js/notification-bell.js"></script>
+</body>
+</html>

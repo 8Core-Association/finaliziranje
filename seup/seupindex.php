@@ -170,23 +170,25 @@ if ($resql && $obj = $db->fetch_object($resql)) {
 $form = new Form($db);
 $formfile = new FormFile($db);
 
-llxHeader("", "SEUP - Elektronski sustav uredskog poslovanja", '', '', 0, 0, '', '', '', 'mod-seup page-index');
+// Additional CSS and JS for llxHeader
+$morehead = '
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="/custom/seup/css/seup-modern.css" rel="stylesheet">
+<link href="/custom/seup/css/setup-modal.css" rel="stylesheet">
+<link href="/custom/seup/css/notification-bell.css" rel="stylesheet">
+';
 
-// Modern design assets
-print '<meta name="viewport" content="width=device-width, initial-scale=1">';
-print '<link rel="preconnect" href="https://fonts.googleapis.com">';
-print '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>';
-print '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">';
-print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">';
-print '<link href="/custom/seup/css/seup-modern.css" rel="stylesheet">';
-print '<link href="css/setup-modal.css" rel="stylesheet">';
-print '<link href="css/notification-bell.css" rel="stylesheet">';
+llxHeader($morehead, "SEUP - Elektronski sustav uredskog poslovanja", '', '', 0, 0, '', '', '', 'mod-seup page-index');
 
-// Notification Bell
-print '<div class="seup-notification-bell" id="seupNotificationBell">';
+// Notification Bell - fixed position in top right corner
+print '<div class="seup-notification-bell has-notifications" id="seupNotificationBell" style="position: fixed !important; top: 80px !important; right: 30px !important; z-index: 99999 !important;">';
 print '  <div class="bell-icon-wrapper">';
 print '    <i class="fas fa-bell bell-icon"></i>';
-print '    <span class="notification-badge" id="notificationCount">0</span>';
+print '    <span class="notification-badge" id="notificationCount" data-count="3" style="display: flex !important;">3</span>';
 print '  </div>';
 print '</div>';
 
@@ -418,8 +420,8 @@ print '  }, 2000);';
 print '}';
 print '</script>';
 print '<script src="/custom/seup/js/seup-modern.js"></script>';
-print '<script src="js/setup-modal.js"></script>';
-print '<script src="js/notification-bell.js"></script>';
+print '<script src="/custom/seup/js/setup-modal.js"></script>';
+print '<script src="/custom/seup/js/notification-bell.js"></script>';
 
 // End of page
 llxFooter();
