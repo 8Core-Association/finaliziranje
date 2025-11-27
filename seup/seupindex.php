@@ -180,6 +180,15 @@ print '<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;5
 print '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">';
 print '<link href="/custom/seup/css/seup-modern.css" rel="stylesheet">';
 print '<link href="css/setup-modal.css" rel="stylesheet">';
+print '<link href="css/notification-bell.css" rel="stylesheet">';
+
+// Notification Bell
+print '<div class="seup-notification-bell" id="seupNotificationBell">';
+print '  <div class="bell-icon-wrapper">';
+print '    <i class="fas fa-bell bell-icon"></i>';
+print '    <span class="notification-badge" id="notificationCount">0</span>';
+print '  </div>';
+print '</div>';
 
 // Main hero section
 print '<main class="seup-hero">';
@@ -410,6 +419,7 @@ print '}';
 print '</script>';
 print '<script src="/custom/seup/js/seup-modern.js"></script>';
 print '<script src="js/setup-modal.js"></script>';
+print '<script src="js/notification-bell.js"></script>';
 
 // End of page
 llxFooter();
